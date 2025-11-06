@@ -73,6 +73,24 @@
             background-color: #eff6ff; /* Light blue on hover */
         }
         
+        /* CSS to hide buttons and background in print mode */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: white; /* Ensure white background for PDF */
+                color: black;
+            }
+            /* Remove shadows and borders for clean print look */
+            .container, .project-card, .education-entry, .certification-card {
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .header {
+                border-bottom: 2px solid #000 !important; /* Keep header separator */
+            }
+        }
     </style>
 </head>
 <body class="p-4 sm:p-8">
@@ -80,7 +98,7 @@
     <div class="container mx-auto bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-gray-100">
 
         <!-- Header -->
-        <header class="text-center mb-10 pb-6 bg-blue-50/50 rounded-xl py-6 border-b-4 border-[#0070c0]">
+        <header class="header text-center mb-10 pb-6 bg-blue-50/50 rounded-xl py-6 border-b-4 border-[#0070c0]">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-[#0070c0] tracking-tight">GAURAV GUPTA</h1>
             <p class="text-xl mt-2 text-gray-700 font-medium">Strategic Marketing Professional | Digital Strategy | Stakeholder Engagement</p>
             <p class="text-lg font-semibold mt-2 text-gray-800">
@@ -317,26 +335,49 @@
             </div>
         </section>
         
-        <!-- Footer / Contact (Dynamic Button) -->
-        <footer class="mt-12 pt-6 border-t border-gray-200 text-center">
+        <!-- Footer / Contact (Dynamic Buttons) -->
+        <footer class="mt-12 pt-6 border-t border-gray-200 text-center no-print">
             <p class="mb-4 text-gray-700 text-lg font-medium">Ready to discuss strategic growth? Let's connect.</p>
             
-            <!-- LinkedIn Button with Icon - more dynamic style -->
-            <a href="https://linkedin.com/in/gaurav-freshfrontiers" target="_blank" 
-               class="inline-flex items-center px-8 py-3 border-4 border-[#0070c0] text-base font-extrabold rounded-full 
-                      shadow-xl text-white bg-[#0070c0] hover:bg-white hover:text-[#0070c0] 
-                      focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out duration-300 
-                      transform hover:scale-105">
-                <!-- LinkedIn Icon SVG -->
-                <svg class="-ml-1 mr-3 h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.504-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-                Connect on LinkedIn
-            </a>
-            
-            <p class="text-sm mt-6 text-gray-500">Gaurav Gupta &copy; 2025 | Portfolio Version 2.5</p>
-        </footer>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <!-- Download PDF Button -->
+                <button onclick="window.print()" 
+                       class="inline-flex items-center px-8 py-3 border-4 border-gray-400 text-base font-extrabold rounded-full 
+                              shadow-xl text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900 
+                              focus:outline-none focus:ring-4 focus:ring-gray-300 transition ease-in-out duration-300 
+                              transform hover:scale-105">
+                    <!-- Download Icon SVG -->
+                    <svg class="-ml-1 mr-3 h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download PDF
+                </button>
 
+                <!-- LinkedIn Button -->
+                <a href="https://linkedin.com/in/gaurav-freshfrontiers" target="_blank" 
+                   class="inline-flex items-center px-8 py-3 border-4 border-[#0070c0] text-base font-extrabold rounded-full 
+                          shadow-xl text-white bg-[#0070c0] hover:bg-white hover:text-[#0070c0] 
+                          focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out duration-300 
+                          transform hover:scale-105">
+                    <!-- LinkedIn Icon SVG -->
+                    <svg class="-ml-1 mr-3 h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.504-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    Connect on LinkedIn
+                </a>
+            </div>
+            
+            <p class="text-sm mt-6 text-gray-500">Gaurav Gupta &copy; 2025 | Portfolio Version 2.6</p>
+        </footer>
+        
+    <script>
+        // Function to trigger the print dialogue
+        function printPortfolio() {
+            // Using window.print() triggers the browser's native print dialogue.
+            // Users must select 'Save as PDF' from the destination settings.
+            window.print();
+        }
+    </script>
     </div>
 </body>
 </html>
