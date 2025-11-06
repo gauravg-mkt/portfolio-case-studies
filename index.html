@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Gupta - Marketing & Communications Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for aesthetics */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 1024px;
+        }
+        .project-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        /* Flexbox fix for clean metric alignment */
+        .metric-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        .metric-label {
+            min-width: 140px; /* Ensures label aligns nicely on two lines */
+            font-weight: 600;
+            color: #10b981; /* Tailwind emerald-500 */
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        .metric-content {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="container mx-auto bg-white rounded-xl shadow-2xl p-6 md:p-10">
+
+        <!-- Header -->
+        <header class="text-center mb-10 border-b pb-6">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-[#0070c0]">Gaurav Gupta</h1>
+            <p class="text-xl mt-2 text-gray-600">Marketing & Communications Leader | Digital Strategy | Stakeholder Engagement</p>
+        </header>
+
+        <!-- Professional Overview & Certifications -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-[#10b981] border-b pb-2">Professional Overview</h2>
+            <p class="text-gray-700 leading-relaxed">
+                I am a results-focused Marketing and Communications professional with over 16 years of global experience, specializing in driving **digital campaign performance** and fostering high-value **stakeholder engagement**. My passion is translating complex organizational goals into strategic, multi-channel initiatives that deliver measurable **ROI**. I thrive on data-driven optimization and building integrated communications that connect with diverse communities.
+            </p>
+            
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold mb-3 text-gray-800">Core Digital Capabilities</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-[#d1e9ff] text-[#0070c0] text-sm font-medium rounded-full">⚙️ Digital Campaign Execution</span>
+                    <span class="px-3 py-1 bg-[#d1e9ff] text-[#0070c0] text-sm font-medium rounded-full">📈 Google Analytics & SEM</span>
+                    <span class="px-3 py-1 bg-[#d1e9ff] text-[#0070c0] text-sm font-medium rounded-full">🛠️ CMS Platforms (WordPress/Wix/SquareSpace)</span>
+                    <span class="px-3 py-1 bg-[#d1e9ff] text-[#0070c0] text-sm font-medium rounded-full">📢 Social Management (Hootsuite/Later/Canva)</span>
+                    <span class="px-3 py-1 bg-[#d1e9ff] text-[#0070c0] text-sm font-medium rounded-full">📧 CRM & Email Segmentation</span>
+                    <span class="px-3 py-1 bg-[#d1e9ff] text-[#0070c0] text-sm font-medium rounded-full">💡 AI for Business Analysis</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infographic Fact Boxes (Visual Impact) -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-[#10b981] border-b pb-2">Quantifiable Impact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                
+                <!-- Fact 1 -->
+                <div class="p-6 bg-red-50 rounded-lg shadow-lg">
+                    <p class="text-5xl font-extrabold text-red-600 mb-2">30%+</p>
+                    <p class="text-lg font-semibold text-gray-700">Increase in Web Traffic</p>
+                    <p class="text-sm text-gray-500 mt-1">Achieved via SEO and multi-channel campaign optimization.</p>
+                </div>
+                
+                <!-- Fact 2 -->
+                <div class="p-6 bg-green-50 rounded-lg shadow-lg">
+                    <p class="text-5xl font-extrabold text-green-600 mb-2">500+</p>
+                    <p class="text-lg font-semibold text-gray-700">High-Profile Event Attendees</p>
+                    <p class="text-sm text-gray-500 mt-1">Coordinated all marketing and logistics for major conferences.</p>
+                </div>
+                
+                <!-- Fact 3 -->
+                <div class="p-6 bg-blue-50 rounded-lg shadow-lg">
+                    <p class="text-5xl font-extrabold text-blue-600 mb-2">35%</p>
+                    <p class="text-lg font-semibold text-gray-700">Consistent Email Open Rates</p>
+                    <p class="text-sm text-gray-500 mt-1">Maintained through list segmentation and performance monitoring.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-[#0070c0] border-b pb-2">Key Projects & Impact</h2>
+            
+            <!-- Project 1: Financial Management (Spiced Up) -->
+            <div class="project-card bg-gray-50 p-6 rounded-xl mb-6">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800">💰 Financial Management and Budgetary Control (Consulting Firm)</h3>
+                <p class="text-gray-700 mb-4">
+                    Managed and controlled a substantial annual departmental budget, ensuring financial stewardship and alignment with marketing ROI goals.
+                </p>
+                <ul class="space-y-2">
+                    <li class="metric-item">
+                        <span class="metric-label">Accountability:</span>
+                        <span class="metric-content">Successfully maintained strict control over a **$1M+ annual marketing budget**, consistently delivering projects under budget and on time.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Vendor Negotiation:</span>
+                        <span class="metric-content">Directed negotiation and management of vendor and agency contracts, securing favorable terms that resulted in a **15% cost saving** on average.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Skills:</span>
+                        <span class="metric-content">Budget Forecasting, Financial Reporting, Contract Management, Cost Optimization.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Project 2: Digital Transformation (Spiced Up) -->
+            <div class="project-card bg-gray-50 p-6 rounded-xl mb-6">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800">💻 Digital Transformation & CRM System Overhaul (Associate VP Role)</h3>
+                <p class="text-gray-700 mb-4">
+                    Led the strategic integration of digital platforms with our CRM system to streamline lead generation and customer relationship management.
+                </p>
+                <ul class="space-y-2">
+                    <li class="metric-item">
+                        <span class="metric-label">Process Improvement:</span>
+                        <span class="metric-content">Spearheaded the integration of marketing automation tools and CRM, resulting in a **40% reduction in lead processing time**.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Efficiency Gain:</span>
+                        <span class="metric-content">Improved data cleanliness and reporting accuracy, enabling sales teams to prioritize high-value leads immediately.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Skills:</span>
+                        <span class="metric-content">CRM Integration, System Architecture, Workflow Optimization.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Project 3: Multi-Channel Awareness Campaign (Actsafe) -->
+            <div class="project-card bg-gray-50 p-6 rounded-xl mb-6">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800">📈 Multi-Channel Awareness Campaign (Safety Association)</h3>
+                <p class="text-gray-700 mb-4">
+                    Executed a performance-driven campaign to boost industry participation and safety awareness across digital channels.
+                </p>
+                <ul class="space-y-2">
+                    <li class="metric-item">
+                        <span class="metric-label">Digital Performance:</span>
+                        <span class="metric-content">Achieved a **30% lift in website traffic** and maintained consistent **35% email open rates** through segmentation.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Data & Tools:</span>
+                        <span class="metric-content">Used **Google Analytics** to convert raw data into actionable insights; managed all content creation using **Canva** and deployment via **Hootsuite/Later**.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Skills:</span>
+                        <span class="metric-content">Google Analytics, Email Marketing, Campaign Optimization, Content Management.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Project 4: Annual Conference Support (Actsafe) -->
+            <div class="project-card bg-gray-50 p-6 rounded-xl mb-6">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800">📅 Annual Conference Coordination (Safety Association)</h3>
+                <p class="text-gray-700 mb-4">
+                    Led the full-cycle marketing and communication coordination for the industry's high-profile Annual Conference.
+                </p>
+                <ul class="space-y-2">
+                    <li class="metric-item">
+                        <span class="metric-label">Scale & Scope:</span>
+                        <span class="metric-content">Event successfully brought together **over 500 participants**, including key government and community partners.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Coordination:</span>
+                        <span class="metric-content">Managed all logistics, event materials, vendor communications, and ensured seamless cross-functional delivery.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Skills:</span>
+                        <span class="metric-content">Event Management, Stakeholder Engagement, Project Coordination, Vendor Management.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Project 5: Rebranding Project (Fresh Frontiers) -->
+            <div class="project-card bg-gray-50 p-6 rounded-xl mb-6">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800">✨ Rebranding Project (Consultancy)</h3>
+                <p class="text-gray-700 mb-4">
+                    Spearheaded and implemented a full corporate rebranding effort across all digital and print assets.
+                </p>
+                <ul class="space-y-2">
+                    <li class="metric-item">
+                        <span class="metric-label">Brand Visibility:</span>
+                        <span class="metric-content">The successful rollout resulted in a **20% bump in online engagement** and improved brand recognition among key stakeholders.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Execution:</span>
+                        <span class="metric-content">Oversaw the update of website assets (using **WordPress/Wix**), social media profiles, and development of a new messaging guide.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Skills:</span>
+                        <span class="metric-content">Brand Strategy, Digital Asset Management, Content Alignment, Web Design.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Project 6: Ergonomic Assessment Tool (Fresh Frontiers) -->
+            <div class="project-card bg-gray-50 p-6 rounded-xl mb-6">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800">💡 Ergonomic Assessment Tool Development (Consultancy)</h3>
+                <p class="text-gray-700 mb-4">
+                    Developed a proprietary, web-based tool to simplify complex ergonomic assessments and improve workplace safety reporting.
+                </p>
+                <ul class="space-y-2">
+                    <li class="metric-item">
+                        <span class="metric-label">Safety & Efficiency:</span>
+                        <span class="metric-content">Simplified data collection and reporting, directly improving **workplace safety compliance** and internal efficiency.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Adoption:</span>
+                        <span class="metric-content">Tool is now widely used by assessors to ensure enhanced accuracy and consistency across multiple client organizations.</span>
+                    </li>
+                    <li class="metric-item">
+                        <span class="metric-label">Skills:</span>
+                        <span class="metric-content">Risk Assessment, Web Applications, Data Modeling, Process Documentation.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Footer / Contact -->
+        <footer class="mt-12 pt-6 border-t text-center text-gray-500">
+            <p class="mb-2">Find more details on my LinkedIn Profile and Project section.</p>
+            <p class="text-sm">Gaurav Gupta &copy; 2025</p>
+        </footer>
+
+    </div>
+</body>
+</html>
