@@ -49,6 +49,8 @@
         .fact-gradient-red { background-image: linear-gradient(to top, #fef2f2, #fff); }
         .fact-gradient-green { background-image: linear-gradient(to top, #ecfdf5, #fff); }
         .fact-gradient-blue { background-image: linear-gradient(to top, #eff6ff, #fff); }
+        /* NEW AMBER GRADIENT for the 4th metric */
+        .fact-gradient-amber { background-image: linear-gradient(to top, #fffdfa, #fff); } 
 
         .certification-card {
             background-color: #ffffff;
@@ -157,9 +159,10 @@
         <!-- 2. Quantifiable Impact & Key Metrics -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold mb-4 text-[#0070c0] border-b pb-2">Quantifiable Impact & Key Metrics</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <!-- Updated grid for 4 columns on large screens -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                 
-                <!-- Fact 1: Web Traffic Growth -->
+                <!-- Fact 1 -->
                 <div class="p-6 fact-gradient-red rounded-xl shadow-lg border-l-4 border-red-500">
                     <!-- Adjusted size for mobile (text-5xl) and detail text contrast -->
                     <p class="text-5xl sm:text-6xl font-extrabold text-red-600 mb-2 leading-none">30%+</p>
@@ -167,7 +170,7 @@
                     <p class="text-sm font-medium text-gray-700 mt-1">Achieved via SEO and multi-channel campaign optimization.</p>
                 </div>
                 
-                <!-- Fact 2: High-Profile Attendees -->
+                <!-- Fact 2 -->
                 <div class="p-6 fact-gradient-green rounded-xl shadow-lg border-l-4 border-green-500">
                     <!-- Adjusted size for mobile (text-5xl) and detail text contrast -->
                     <p class="text-5xl sm:text-6xl font-extrabold text-green-600 mb-2 leading-none">500+</p>
@@ -175,12 +178,20 @@
                     <p class="text-sm font-medium text-gray-700 mt-1">Coordinated marketing and logistics for major industry conferences.</p>
                 </div>
                 
-                <!-- Fact 3: Consistent Email Open Rates -->
+                <!-- Fact 3 -->
                 <div class="p-6 fact-gradient-blue rounded-xl shadow-lg border-l-4 border-blue-500">
                     <!-- Adjusted size for mobile (text-5xl) and detail text contrast -->
                     <p class="text-5xl sm:text-6xl font-extrabold text-blue-600 mb-2 leading-none">35%</p>
                     <p class="text-lg font-bold text-gray-700 mt-2">Consistent Email Open Rates</p>
                     <p class="text-sm font-medium text-gray-700 mt-1">Maintained through list segmentation and performance monitoring.</p>
+                </div>
+
+                <!-- Fact 4: UPDATED METRIC - Events Conceptualized -->
+                <div class="p-6 fact-gradient-amber rounded-xl shadow-lg border-l-4 border-amber-500">
+                    <!-- Adjusted size for mobile (text-5xl) and detail text contrast -->
+                    <p class="text-5xl sm:text-6xl font-extrabold text-amber-600 mb-2 leading-none">100+</p>
+                    <p class="text-lg font-bold text-gray-700 mt-2">Conceptualized & Executed Events</p>
+                    <p class="text-sm font-medium text-gray-700 mt-1">For major corporates and Intellectual Properties (IPs).</p>
                 </div>
             </div>
         </section>
@@ -223,7 +234,7 @@
                 </button>
             </div>
             
-            <!-- Project 2: Digital Transformation (Associate VP Role) -->
+            <!-- Project 2: Digital Transformation (Associate VP Role) - FORMATTING CORRECTED -->
             <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100" id="project2">
                 <h3 class="text-2xl font-bold mb-3 text-gray-800 flex items-center">
                     Digital Transformation & CRM System Overhaul (Associate VP Role)
@@ -235,16 +246,22 @@
                 <div class="project-details hidden" id="details-project2">
                     <ul class="space-y-2 text-sm mt-4">
                         <li class="metric-item">
-                            <span class="metric-label">Process Improvement:</span>
-                            <span class="metric-content">Spearheaded the integration of marketing automation tools and CRM, resulting in a 40% reduction in lead processing time.</span>
+                            <!-- BOLDING REMOVED -->
+                            <span class="metric-label">Financial Oversight:</span>
+                            <span class="metric-content">Ensured a steady operational profit of 10% to 15% annually by executing strategic vendor negotiations and successfully channelizing new business wins for consistent departmental revenue.</span>
                         </li>
                         <li class="metric-item">
-                            <span class="metric-label">Efficiency Gain:</span>
-                            <span class="metric-content">Improved data cleanliness and reporting accuracy, enabling sales teams to prioritize high-value leads immediately.</span>
+                            <span class="metric-label">Process Improvement:</span>
+                            <!-- BOLDING REMOVED -->
+                            <span class="metric-content">Spearheaded the integration of marketing automation tools and CRM, resulting in a 40% reduction in lead processing time and higher data accuracy.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">System Architecture:</span>
+                            <span class="metric-content">Improved data cleanliness and reporting, enabling sales teams to prioritize high-value leads immediately.</span>
                         </li>
                         <li class="metric-item">
                             <span class="metric-label">Skills:</span>
-                            <span class="metric-content">CRM Integration, System Architecture, Workflow Optimization.</span>
+                            <span class="metric-content">CRM Integration, Financial P&L Management, Vendor Negotiation, System Architecture, Workflow Optimization.</span>
                         </li>
                     </ul>
                 </div>
@@ -303,7 +320,6 @@
                 <div class="project-details hidden" id="details-project4">
                     <ul class="space-y-2 text-sm mt-4">
                         <li class="metric-item">
-                            <!-- CORRECTED TEXT: Removed ** around production sets -->
                             <span class="metric-label">Direct Engagement:</span>
                             <span class="metric-content">Visited an average of 2 production sets per day, directly interacting with 80+ workers daily.</span>
                         </li>
@@ -443,11 +459,7 @@
         
         <!-- Footer / Contact (Dynamic Buttons) -->
         <footer class="mt-12 pt-6 border-t border-gray-200 text-center">
-            <!-- Note for PDF Download - ** Markdown removed -->
-            <p class="mb-4 text-sm font-medium text-red-600 no-print bg-red-50 p-3 rounded-lg border border-red-200">
-                Note on PDF Download: If the "Download PDF" button doesn't open a menu, please open this file in a new browser tab/window. The environment's security settings may be blocking the print function.
-            </p>
-
+            
             <p class="mb-4 text-gray-700 text-lg font-medium">Ready to discuss strategic growth? Let's connect.</p>
             
             <div class="flex justify-center gap-4 flex-wrap no-print">
@@ -478,6 +490,11 @@
                 </a>
             </div>
             
+            <!-- Note on PDF Download (MOVED HERE) -->
+            <p class="mt-6 mb-4 text-sm font-medium text-red-600 no-print bg-red-50 p-3 rounded-lg border border-red-200">
+                Note on PDF Download: If the "Download PDF" button doesn't open a menu, please open this file in a new browser tab/window. The environment's security settings may be blocking the print function.
+            </p>
+
             <p class="text-sm mt-6 text-gray-500">Gaurav Gupta &copy; 2025 | Portfolio Version 3.1</p>
         </footer>
         
