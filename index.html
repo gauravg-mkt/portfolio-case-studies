@@ -31,7 +31,8 @@
         .metric-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 0.5rem;
+            /* Slightly increased spacing for better readability in the details list (UX refinement) */
+            margin-bottom: 0.75rem; 
         }
         .metric-label {
             /* Ensures guaranteed alignment across all labels */
@@ -73,6 +74,25 @@
             background-color: #eff6ff; /* Light blue on hover */
         }
         
+        /* CORRECTED STYLING FOR READ MORE BUTTON (Dark Blue & Bold) */
+        .read-more-btn {
+            /* Using a darker blue (Blue-800) for high visibility */
+            @apply flex items-center mt-3 text-sm font-extrabold text-blue-800 hover:text-blue-900 transition duration-150;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent; 
+        }
+        .read-more-btn:hover {
+            border-bottom-color: #1e40af; /* Dark Blue underline on hover */
+        }
+        
+        .chevron {
+            transition: transform 0.2s ease-in-out;
+            margin-left: 0.5rem;
+        }
+        .chevron.open {
+            transform: rotate(180deg);
+        }
+
         /* CSS to hide buttons and background in print mode */
         @media print {
             .no-print {
@@ -89,6 +109,10 @@
             }
             .header {
                 border-bottom: 2px solid #000 !important; /* Keep header separator */
+            }
+            /* Crucial: Ensure hidden sections are visible when printing for full content */
+            .project-details.hidden {
+                display: block !important;
             }
         }
     </style>
@@ -130,30 +154,33 @@
             </div>
         </section>
 
-        <!-- 2. Quantifiable Impact (Moved to a higher position) -->
+        <!-- 2. Quantifiable Impact & Key Metrics -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold mb-4 text-[#0070c0] border-b pb-2">Quantifiable Impact & Key Metrics</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 
-                <!-- Fact 1 -->
+                <!-- Fact 1: Web Traffic Growth -->
                 <div class="p-6 fact-gradient-red rounded-xl shadow-lg border-l-4 border-red-500">
-                    <p class="text-6xl font-extrabold text-red-600 mb-2 leading-none">30%+</p>
+                    <!-- Adjusted size for mobile (text-5xl) and detail text contrast -->
+                    <p class="text-5xl sm:text-6xl font-extrabold text-red-600 mb-2 leading-none">30%+</p>
                     <p class="text-lg font-bold text-gray-700 mt-2">Web Traffic Growth</p>
-                    <p class="text-sm text-gray-500 mt-1">Achieved via SEO and multi-channel campaign optimization.</p>
+                    <p class="text-sm font-medium text-gray-700 mt-1">Achieved via SEO and multi-channel campaign optimization.</p>
                 </div>
                 
-                <!-- Fact 2 -->
+                <!-- Fact 2: High-Profile Attendees -->
                 <div class="p-6 fact-gradient-green rounded-xl shadow-lg border-l-4 border-green-500">
-                    <p class="text-6xl font-extrabold text-green-600 mb-2 leading-none">500+</p>
+                    <!-- Adjusted size for mobile (text-5xl) and detail text contrast -->
+                    <p class="text-5xl sm:text-6xl font-extrabold text-green-600 mb-2 leading-none">500+</p>
                     <p class="text-lg font-bold text-gray-700 mt-2">High-Profile Attendees</p>
-                    <p class="text-sm text-gray-500 mt-1">Coordinated marketing and logistics for major industry conferences.</p>
+                    <p class="text-sm font-medium text-gray-700 mt-1">Coordinated marketing and logistics for major industry conferences.</p>
                 </div>
                 
-                <!-- Fact 3 -->
+                <!-- Fact 3: Consistent Email Open Rates -->
                 <div class="p-6 fact-gradient-blue rounded-xl shadow-lg border-l-4 border-blue-500">
-                    <p class="text-6xl font-extrabold text-blue-600 mb-2 leading-none">35%</p>
+                    <!-- Adjusted size for mobile (text-5xl) and detail text contrast -->
+                    <p class="text-5xl sm:text-6xl font-extrabold text-blue-600 mb-2 leading-none">35%</p>
                     <p class="text-lg font-bold text-gray-700 mt-2">Consistent Email Open Rates</p>
-                    <p class="text-sm text-gray-500 mt-1">Maintained through list segmentation and performance monitoring.</p>
+                    <p class="text-sm font-medium text-gray-700 mt-1">Maintained through list segmentation and performance monitoring.</p>
                 </div>
             </div>
         </section>
@@ -162,100 +189,179 @@
         <section class="mb-12">
             <h2 class="text-3xl font-bold mb-6 text-[#059669] border-b pb-2">Key Projects & Impact</h2>
             
-            <!-- Project 1: Financial Management (Spiced Up) -->
-            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100">
+            <!-- Project 1: Financial Management (Consulting Firm) -->
+            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100" id="project1">
                 <h3 class="text-2xl font-bold mb-3 text-gray-800 flex items-center">
                     Financial Management and Budgetary Control (Consulting Firm)
                 </h3>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-2">
                     Managed and controlled a substantial annual departmental budget, ensuring financial stewardship and alignment with marketing ROI goals.
                 </p>
-                <ul class="space-y-2 text-sm">
-                    <li class="metric-item">
-                        <span class="metric-label">Accountability:</span>
-                        <span class="metric-content">Successfully maintained strict control over a $1M+ annual marketing budget, consistently delivering projects under budget and on time.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Vendor Negotiation:</span>
-                        <span class="metric-content">Directed negotiation and management of vendor and agency contracts, securing favorable terms that resulted in a 15% cost saving on average.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Skills:</span>
-                        <span class="metric-content">Budget Forecasting, Financial Reporting, Contract Management, Cost Optimization.</span>
-                    </li>
-                </ul>
+                
+                <div class="project-details hidden" id="details-project1">
+                    <ul class="space-y-2 text-sm mt-4">
+                        <li class="metric-item">
+                            <span class="metric-label">Accountability:</span>
+                            <span class="metric-content">Successfully maintained strict control over a $1M+ annual marketing budget, consistently delivering projects under budget and on time.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Vendor Negotiation:</span>
+                            <span class="metric-content">Directed negotiation and management of vendor and agency contracts, securing favorable terms that resulted in a 15% cost saving on average.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Skills:</span>
+                            <span class="metric-content">Budget Forecasting, Financial Reporting, Contract Management, Cost Optimization.</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="toggleDetails('project1')" class="read-more-btn" data-project-id="project1">
+                    <span id="text-project1">Read More...</span>
+                    <!-- Chevron Down SVG Icon -->
+                    <svg id="chevron-project1" class="chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
             </div>
             
-            <!-- Project 2: Digital Transformation (Spiced Up) -->
-            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100">
+            <!-- Project 2: Digital Transformation (Associate VP Role) -->
+            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100" id="project2">
                 <h3 class="text-2xl font-bold mb-3 text-gray-800 flex items-center">
                     Digital Transformation & CRM System Overhaul (Associate VP Role)
                 </h3>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-2">
                     Led the strategic integration of digital platforms with our CRM system to streamline lead generation and customer relationship management.
                 </p>
-                <ul class="space-y-2 text-sm">
-                    <li class="metric-item">
-                        <span class="metric-label">Process Improvement:</span>
-                        <span class="metric-content">Spearheaded the integration of marketing automation tools and CRM, resulting in a 40% reduction in lead processing time.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Efficiency Gain:</span>
-                        <span class="metric-content">Improved data cleanliness and reporting accuracy, enabling sales teams to prioritize high-value leads immediately.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Skills:</span>
-                        <span class="metric-content">CRM Integration, System Architecture, Workflow Optimization.</span>
-                    </li>
-                </ul>
-            </div>
 
+                <div class="project-details hidden" id="details-project2">
+                    <ul class="space-y-2 text-sm mt-4">
+                        <li class="metric-item">
+                            <span class="metric-label">Process Improvement:</span>
+                            <span class="metric-content">Spearheaded the integration of marketing automation tools and CRM, resulting in a 40% reduction in lead processing time.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Efficiency Gain:</span>
+                            <span class="metric-content">Improved data cleanliness and reporting accuracy, enabling sales teams to prioritize high-value leads immediately.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Skills:</span>
+                            <span class="metric-content">CRM Integration, System Architecture, Workflow Optimization.</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="toggleDetails('project2')" class="read-more-btn" data-project-id="project2">
+                    <span id="text-project2">Read More...</span>
+                    <!-- Chevron Down SVG Icon -->
+                    <svg id="chevron-project2" class="chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            
             <!-- Project 3: Multi-Channel Awareness Campaign (Safety Association) -->
-            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100">
+            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100" id="project3">
                 <h3 class="text-2xl font-bold mb-3 text-gray-800 flex items-center">
                     Multi-Channel Awareness Campaign (Safety Association)
                 </h3>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-2">
                     Executed a performance-driven campaign to boost industry participation and safety awareness across digital channels.
                 </p>
-                <ul class="space-y-2 text-sm">
-                    <li class="metric-item">
-                        <span class="metric-label">Digital Performance:</span>
-                        <span class="metric-content">Achieved a 30% lift in website traffic and maintained consistent 35% email open rates through segmentation.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Data & Tools:</span>
-                        <span class="metric-content">Used Google Analytics to convert raw data into actionable insights; managed all content creation using Canva and deployment via Hootsuite/Later.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Skills:</span>
-                        <span class="metric-content">Google Analytics, Email Marketing, Campaign Optimization, Content Management.</span>
-                    </li>
-                </ul>
+                
+                <div class="project-details hidden" id="details-project3">
+                    <ul class="space-y-2 text-sm mt-4">
+                        <li class="metric-item">
+                            <span class="metric-label">Digital Performance:</span>
+                            <span class="metric-content">Achieved a 30% lift in website traffic and maintained consistent 35% email open rates through segmentation.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Data & Tools:</span>
+                            <span class="metric-content">Used Google Analytics to convert raw data into actionable insights; managed all content creation using Canva and deployment via Hootsuite/Later.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Skills:</span>
+                            <span class="metric-content">Google Analytics, Email Marketing, Campaign Optimization, Content Management.</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="toggleDetails('project3')" class="read-more-btn" data-project-id="project3">
+                    <span id="text-project3">Read More...</span>
+                    <!-- Chevron Down SVG Icon -->
+                    <svg id="chevron-project3" class="chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
             </div>
-            
-            <!-- Project 4: Annual Conference Coordination (Safety Association) -->
-            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100">
+
+            <!-- Project 4: Injury Prevention Week Roadshow (Safety Association) -->
+            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100" id="project4">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800 flex items-center">
+                    Community Engagement & Injury Prevention Roadshow (Safety Association)
+                </h3>
+                <p class="text-gray-700 mb-2">
+                    Designed and managed a multi-day, on-site roadshow featuring a coffee truck to drive direct engagement with members and workers on safety topics.
+                </p>
+                
+                <div class="project-details hidden" id="details-project4">
+                    <ul class="space-y-2 text-sm mt-4">
+                        <li class="metric-item">
+                            <!-- CORRECTED TEXT: Removed ** around production sets -->
+                            <span class="metric-label">Direct Engagement:</span>
+                            <span class="metric-content">Visited an average of 2 production sets per day, directly interacting with 80+ workers daily.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Educational Impact:</span>
+                            <span class="metric-content">Used interactive trivia and games to educate the audience, increasing retention and distribution of critical safety materials.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Coordination:</span>
+                            <span class="metric-content">Managed all logistics, including vendor (coffee truck) contracts, material design, and on-site coordination with safety advisors.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Skills:</span>
+                            <span class="metric-content">Event Management, Community Relations, On-Site Logistics, Stakeholder Education.</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="toggleDetails('project4')" class="read-more-btn" data-project-id="project4">
+                    <span id="text-project4">Read More...</span>
+                    <!-- Chevron Down SVG Icon -->
+                    <svg id="chevron-project4" class="chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Project 5: Annual Conference Coordination (Safety Association) -->
+            <div class="project-card bg-white p-6 rounded-xl mb-6 border border-gray-100" id="project5">
                 <h3 class="text-2xl font-bold mb-3 text-gray-800 flex items-center">
                     Annual Conference Coordination (Safety Association)
                 </h3>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-2">
                     Led the full-cycle marketing and communication coordination for the industry's high-profile Annual Conference.
                 </p>
-                <ul class="space-y-2 text-sm">
-                    <li class="metric-item">
-                        <span class="metric-label">Scale & Scope:</span>
-                        <span class="metric-content">Event successfully brought together over 500 participants, including key government and community partners.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Coordination:</span>
-                        <span class="metric-content">Managed all logistics, event materials, vendor communications, and ensured seamless cross-functional delivery.</span>
-                    </li>
-                    <li class="metric-item">
-                        <span class="metric-label">Skills:</span>
-                        <span class="metric-content">Event Management, Stakeholder Engagement, Project Coordination, Vendor Management.</span>
-                    </li>
-                </ul>
+
+                <div class="project-details hidden" id="details-project5">
+                    <ul class="space-y-2 text-sm mt-4">
+                        <li class="metric-item">
+                            <span class="metric-label">Scale & Scope:</span>
+                            <span class="metric-content">Event successfully brought together over 500 participants, including key government and community partners.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Coordination:</span>
+                            <span class="metric-content">Managed all logistics, event materials, vendor communications, and ensured seamless cross-functional delivery.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-label">Skills:</span>
+                            <span class="metric-content">Event Management, Stakeholder Engagement, Project Coordination, Vendor Management.</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="toggleDetails('project5')" class="read-more-btn" data-project-id="project5">
+                    <span id="text-project5">Read More...</span>
+                    <!-- Chevron Down SVG Icon -->
+                    <svg id="chevron-project5" class="chevron w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
             </div>
         </section>
         
@@ -337,9 +443,9 @@
         
         <!-- Footer / Contact (Dynamic Buttons) -->
         <footer class="mt-12 pt-6 border-t border-gray-200 text-center">
-            <!-- New instruction message for PDF download -->
+            <!-- Note for PDF Download - ** Markdown removed -->
             <p class="mb-4 text-sm font-medium text-red-600 no-print bg-red-50 p-3 rounded-lg border border-red-200">
-                **Note on PDF Download:** If the "Download PDF" button doesn't open a menu, please open this file in a new browser tab/window. The environment's security settings may be blocking the print function.
+                Note on PDF Download: If the "Download PDF" button doesn't open a menu, please open this file in a new browser tab/window. The environment's security settings may be blocking the print function.
             </p>
 
             <p class="mb-4 text-gray-700 text-lg font-medium">Ready to discuss strategic growth? Let's connect.</p>
@@ -372,16 +478,45 @@
                 </a>
             </div>
             
-            <p class="text-sm mt-6 text-gray-500">Gaurav Gupta &copy; 2025 | Portfolio Version 2.7</p>
+            <p class="text-sm mt-6 text-gray-500">Gaurav Gupta &copy; 2025 | Portfolio Version 3.1</p>
         </footer>
         
     <script>
-        // Function to trigger the print dialogue
-        function printPortfolio() {
-            // Using window.print() triggers the browser's native print dialogue.
-            // Users must select 'Save as PDF' from the destination settings.
-            window.print();
+        // Function to toggle the visibility of project details
+        function toggleDetails(projectId) {
+            const details = document.getElementById(`details-${projectId}`);
+            const buttonText = document.getElementById(`text-${projectId}`);
+            const chevron = document.getElementById(`chevron-${projectId}`);
+            
+            // Toggle the 'hidden' class on the details div
+            const isHidden = details.classList.toggle('hidden');
+
+            // Update the button text and chevron rotation
+            if (isHidden) {
+                buttonText.textContent = 'Read More...';
+                chevron.classList.remove('open');
+            } else {
+                buttonText.textContent = 'Read Less';
+                chevron.classList.add('open');
+            }
         }
+
+        // Initialize all project details as hidden and set button text
+        document.addEventListener('DOMContentLoaded', () => {
+            const projects = ['project1', 'project2', 'project3', 'project4', 'project5'];
+            projects.forEach(id => {
+                const details = document.getElementById(`details-${id}`);
+                const buttonText = document.getElementById(`text-${id}`);
+                const chevron = document.getElementById(`chevron-${id}`);
+                
+                // Ensure they are hidden on load and button says 'Read More'
+                if (details && buttonText && chevron) {
+                    details.classList.add('hidden');
+                    buttonText.textContent = 'Read More...';
+                    chevron.classList.remove('open');
+                }
+            });
+        });
     </script>
     </div>
 </body>
